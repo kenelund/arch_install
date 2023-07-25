@@ -21,7 +21,7 @@ echo "Set root password!"
 passwd
 
 # Install bootloader
-bootctl --path=/boot/efi install
+bootctl --path=/boot install
 
 cat << EOF > /boot/loader/loader.conf
 default		arch
@@ -50,7 +50,7 @@ Description = Updating systemd-boot...
 When = PostTransaction
 Exec = /usr/bin/bootctl update
 EOF
-}
+
 
 # pacman_hook pacman cache maintenance - automatic cleanup of old update packages
 # assumes 'pacman-contrib' package is installed
@@ -68,7 +68,6 @@ Description = Cleaning pacman cache...
 When = PostTransaction
 Exec = /usr/bin/paccache --remove
 EOF
-}
 
 
 # Create new user
