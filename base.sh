@@ -63,9 +63,9 @@ timedatectl set-ntp true
 pacman-key --init
 pacman-key --populate archlinux
 pacman-key --refresh-keys
-
+20211215-1
 # Installing core packages
-pacstrap /mnt base base-devel linux linux-firmware intel-ucode efibootmgr dosfstools freetype2 iw wpa_supplicant dialog xorg xorg-server xorg-xinit mesa xf86-video-intel
+pacstrap /mnt base base-devel linux linux-firmware intel-ucode efibootmgr dosfstools freetype2 iw wpa_supplicant dialog xorg xorg-server xorg-xinit mesa xf86-video-intel xf86-input-synaptics vi vim bash-completion
 
 # Generate fstab
 genfstab -U /mnt >> /mnt/etc/fstab
