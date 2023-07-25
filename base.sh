@@ -69,8 +69,8 @@ pacstrap /mnt base base-devel linux linux-firmware intel-ucode efibootmgr dosfst
 genfstab -U /mnt >> /mnt/etc/fstab
 
 # Copy post-install system configuration scripts to new /root
-cp -rfv base_config.sh /mnt/root
-cp -rfv workspace.sh /mnt/root
+cp -rfv arch_install-main/base_config.sh /mnt/root
+cp -rfv arch_install-main/workspace.sh /mnt/root
 chmod a+x /mnt/root/base_config.sh
 chmod a+x /mnt/root/workspace.sh
 
