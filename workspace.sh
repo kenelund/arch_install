@@ -15,3 +15,25 @@ rmdir yay
 
 # yay -S google-chrome i3blocks-contrib
 
+
+
+
+# Setup login management - no display manager
+mkdir /etc/systemd/system/getty@tty1.service.d
+
+cat << EOF > /etc/systemd/system/getty@tty1.service.d/autologin.conf
+[Service]
+ExecStart=
+ExecStart=-/bin/autologin.sh %I
+EOF
+
+cat << EOF > /bin/autologin.sh
+#!/bin/sh
+if [ -f /tmp/autologin ]
+then
+  exec /sbin/agetty --autologin kenneth --noclear $1
+else
+  exec /sbin/agetty --noclear $1
+fi
+EOF
+chmod a+x /bin/autologin.sh
