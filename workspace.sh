@@ -8,12 +8,18 @@ extraa="android-tools"
 pacman -Sy
 pacman -S --needed $base $utility $applications $fonts $extra
 
+# Needed for startx
+cat << EOF > /home/kenneth/.xinitrc
+exec i3
+EOF
+
+
 # arch user repoaitory
-cd /root
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-rmdir yay
+#cd /root
+#git clone https://aur.archlinux.org/yay.git
+#cd yay
+#makepkg -si
+#rmdir yay
 
 # yay -S google-chrome i3blocks-contrib
 
