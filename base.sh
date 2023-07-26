@@ -52,6 +52,7 @@ mkfs.fat -F32 /dev/sda1
 
 # Mount the partitions
 mount /dev/sda2 /mnt
+mkdir -pv /mnt/home
 mount /dev/sda3 /mnt/home
 mkdir -pv /mnt/boot
 mount /dev/sda1 /mnt/boot
