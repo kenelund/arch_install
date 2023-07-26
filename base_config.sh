@@ -120,7 +120,7 @@ Wants=network.target
 
 [Service]
 Type=simple
-ExecStart=/us/bin/wpa_supplicant -c/etc/wpa_supplicant/wpa_supplicant-%I.conf -i%I
+ExecStart=/usr/bin/wpa_supplicant -c /etc/wpa_supplicant/wpa_supplicant-%I.conf -i%I
 
 [Install]
 WantedBy=multi-user.target
