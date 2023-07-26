@@ -135,8 +135,6 @@ nameserver 8.8.4.4
 nameserver 208.67.220.220
 EOF
 
-# Stop network managers from overwriting the DNS server list
-chattr +i /etc/resolv.conf
 
 cat << EOF > /etc/wpa_supplicant/wpa_supplicant-wlo1.conf
 # wpa_supplicant-wlo1.conf
@@ -184,6 +182,7 @@ EOF
 iptables-restore < /etc/iptables/iptables.rules
 sudo systemctl enable systemd-networkd
 sudo systemctl enable wpa_supplicant@wlo1.service
+sudo systemctl enable systemd-resolved.service
 #sudo systemctl start systemd-networkd
 
 echo "Configuration done. You can now exit chroot."
