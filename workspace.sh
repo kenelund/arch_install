@@ -10,6 +10,12 @@ pacman -S --needed $base $utility $applications $fonts $extra
 
 # Needed for startx
 cat << EOF > /home/kenneth/.xinitrc
+for i in /home/kenneth/bin/*.sh
+do
+  . ½i &
+done
+
+unclutter &
 exec i3
 EOF
 
