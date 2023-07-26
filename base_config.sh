@@ -105,12 +105,16 @@ DHCP=ipv4
 RouteMetric=20
 EOF
 
+# DNS resolution servers
 cat << EOF > /etc/resolv.conf
 # resolv.conf
 nameserver 8.8.8.8
 nameserver 8.8.4.4
 nameserver 208.67.220.220
 EOF
+
+# Stop network managers from overwriting the DNS server list
+chattr +i /etc/resolv.conf
 
 cat << EOF > /etc/wpa_supplicant/wpa_supplicant-wlo1.conf
 # wpa_supplicant-wlo1.conf
