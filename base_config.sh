@@ -74,7 +74,7 @@ EOF
 
 
 # Create new user
-useradd -m -G wheel,power,input,storage,uucp,network -s /usr/bin/bash kenneth
+useradd -m -G wheel,power,input,storage,uucp,network -s /bin/bash kenneth
 sed --in-place 's/^# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
 echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers.d/10-wheel-group
 echo "Set password for new user kenneth"
