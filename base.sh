@@ -65,7 +65,7 @@ pacman-key --populate archlinux
 pacman-key --refresh-keys
 20211215-1
 # Installing core packages
-pacstrap /mnt base base-devel linux linux-firmware intel-ucode efibootmgr dosfstools freetype2 iw wpa_supplicant dialog xorg xorg-server xorg-xinit mesa xf86-video-intel xf86-input-synaptics vi vim bash-completion wireless_tools
+pacstrap /mnt base base-devel linux linux-firmware intel-ucode efibootmgr dosfstools freetype2 wget curl iw wpa_supplicant dialog xorg-server xorg-server-utils xorg-twm xorg-xclock xorg-xinit xorg-xprop xorg-xwininfo mesa xf86-video-intel xf86-input-synaptics vi vim bash-completion wireless_tools
 
 # Generate fstab
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -80,3 +80,4 @@ echo "After chrooting into newly installed OS, please run the base-config.sh by 
 echo "After chrooting into newly installed OS, please run the workspace-install.sh by executing ./root/workspace.sh"
 echo "Entering chroot..."
 arch-chroot /mnt /bin/bash
+xorg
