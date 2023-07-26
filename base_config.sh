@@ -108,6 +108,25 @@ DHCP=ipv4
 RouteMetric=20
 EOF
 
+cat << EOF > /etc/systemd/system/wpa_supplicant@wlo1.service
+[Unit]
+Description=WPA supplicant daemon (interface.specific version)
+Requires=sys-subsystem.net-devices-%i.device
+After=sys-subsystem-net-devices-%i.device
+Before=network.target
+Wants=network.target
+
+# NetworkManager users will probably want the dbus version instead.
+
+[Service]
+Type=simple
+ExecStart=/us/bin/wpa_supplicant -c/etc/wpa_supplicant/wpa_supplicant-%I.conf -i%I
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+
 # DNS resolution servers
 cat << EOF > /etc/resolv.conf
 # resolv.conf
@@ -164,6 +183,7 @@ EOF
 
 iptables-restore < /etc/iptables/iptables.rules
 sudo systemctl enable systemd-networkd
-sudo systemctl start systemd-networkd
+sudo systemctl enable wpa_supplicant@wlo1.service
+#sudo systemctl start systemd-networkd
 
 echo "Configuration done. You can now exit chroot."
