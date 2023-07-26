@@ -81,25 +81,6 @@ passwd kenneth
 echo -e 'EDITOR=vim' > /etc/environment
 sed --in-place 's/#Color/Color/' /etc/pacman.conf
 
-# Setup login management - no display manager
-cat << EOF > /etc/systemd/system/getty@tty1.service.d/autologin.conf
-[Service]
-ExecStart=
-ExecStart=-/bin/autologin.sh %I
-EOF
-
-cat << EOF > /bin/autologin.sh
-#!/bin/sh
-if [ -f /tmp/autologin ]
-then
-  exec /sbin/agetty --autologin kenneth --noclear $1
-else
-  exec /sbin/agetty --noclear $1
-fi
-EOF
-chmod a+x /bin/autologin.sh
-
-
 # Network Configuration
 cat << EOF > /etc/systemd/network/10-lan.network
 # 10-lan.network
