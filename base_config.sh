@@ -1,5 +1,8 @@
 #! /bin/bash
 
+# Appending pacman config to enable multilib repository
+sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
+
 # Set date time
 ln -sf /usr/share/zoneinfo/Europe/Stockholm /etc/localtime
 hwclock --systohc
