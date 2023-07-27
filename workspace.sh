@@ -19,6 +19,15 @@ unclutter &
 exec i3
 EOF
 
+# Set keyboard language for xorg
+cat << EOF > /etc/X11/xorg.conf.d/00-keyboard.conf
+Section "InputClass"
+  Identifier "system-keyboard"
+  MatchIsKeyboard "on"
+  Option "XkbLayout" "no"
+EndSection
+EOF
+
 # Load custom vim file
 cat << EOF > /home/kenneth/.vimrc
 source /home/kenneth/bin/src/.vimrc
