@@ -61,7 +61,7 @@ EOF
 #makepkg -si
 #rmdir yay
 
-# yay -S google-chrome i3blocks-contrib
+# yay -S google-chrome i3blocks-contrib dropbox
 
 
 
