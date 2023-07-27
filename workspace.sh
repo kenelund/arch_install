@@ -43,6 +43,15 @@ cat << EOF > /home/kenneth/.Xresources
 source /home/kenneth/bin/src/.Xresources
 EOF
 
+# Add extra fonts folder
+cat << EOF > /etc/fonts/local.conf
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+ <dir>/home/kenneth/bin/src/fonts</dir>
+</fontconfig>
+EOF
+
 
 # arch user repoaitory
 #cd /root
