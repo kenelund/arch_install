@@ -12,13 +12,22 @@ pacman -S --needed $base $utility $applications $fonts $extra
 cat << EOF > /home/kenneth/.xinitrc
 for i in /home/kenneth/bin/*.sh
 do
-  . ½i &
+  . $i &
 done
 
 unclutter &
 exec i3
 EOF
 
+# Load custom vim file
+cat << EOF > /home/kenneth/.vimrc
+source /home/kenneth/bin/src/.vimrc
+EOF
+
+# Load custom tmux file
+cat << EOF > /home/kenneth/.tmux.conf
+source /home/kenneth/bin/src/.tmux.conf
+EOF
 
 # arch user repoaitory
 #cd /root
