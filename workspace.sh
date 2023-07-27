@@ -41,12 +41,13 @@ EOF
 # Load custom resource file for urxvt-unicode
 cat << EOF > /home/kenneth/.Xresources
 source /home/kenneth/bin/src/.Xresources
-EOF
+EOF<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
 
 # Add extra fonts folder
 cat << EOF > /etc/fonts/local.conf
 <?xml version="1.0"?>
-<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
 <fontconfig>
  <dir>/home/kenneth/bin/src/fonts</dir>
 </fontconfig>
