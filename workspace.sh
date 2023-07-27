@@ -29,6 +29,12 @@ cat << EOF > /home/kenneth/.tmux.conf
 source /home/kenneth/bin/src/.tmux.conf
 EOF
 
+# Load custom resource file for urxvt-unicode
+cat << EOF > /home/kenneth/.Xresources
+source /home/kenneth/bin/src/.Xresources
+EOF
+
+
 # arch user repoaitory
 #cd /root
 #git clone https://aur.archlinux.org/yay.git
