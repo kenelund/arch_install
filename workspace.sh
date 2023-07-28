@@ -41,8 +41,7 @@ EOF
 # Load custom resource file for urxvt-unicode
 cat << EOF > /home/kenneth/.Xresources
 source /home/kenneth/bin/src/.Xresources
-EOF<?xml version="1.0"?>
-<!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
+EOF
 
 # Add extra fonts folder
 cat << EOF > /etc/fonts/local.conf
@@ -52,6 +51,12 @@ cat << EOF > /etc/fonts/local.conf
  <dir>/home/kenneth/bin/src/fonts</dir>
 </fontconfig>
 EOF
+
+# Set ranger to show hidden files by default
+cat << EOF > /home/kenneth/.config/ranger/rc.conf
+set show_hidden true
+EOF
+
 
 
 # arch user repoaitory
