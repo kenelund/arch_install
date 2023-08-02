@@ -1,12 +1,13 @@
 #! /bin/bash
 
-base="dmenu rxvt-unicode i3-wm i3blocks i3lock i3status dunst feh htop rofi unclutter xautolock"
-utility="acpi alsa-tools alsa-utils arandr bridge-utils inotify-tools inetutils libnotify lib32-alsa-plugins lib32-libpulse logrotate net-tools pavucontrol pulseaudio-alsa smartmontools tlp xdotool xfsprogs xprintidle xssstate git unrar unzip zip p7zip gzip"
-applications="cmus deluge-gtk firefox leafpad mpv mupdf neofetch obsidian ranger rclone redshift tmux viewnior"
+base="dmenu rxvt-unicode i3-wm i3blocks i3lock i3status dunst rofi xautolock"
+utility="acpi arandr bridge-utils inotify-tools inetutils libnotify logrotate net-tools smartmontools tlp xdotool xfsprogs xprintidle xssstate git unrar unzip zip p7zip gzip"
+audio="pavucontrol pulseaudio-alsa lib32-alsa-plugins alsa-tools alsa-utils lib32-libpulse"
+applications="cmus htop unclutter feh deluge-gtk firefox leafpad mpv mupdf neofetch obsidian ranger rclone redshift tmux viewnior"
 fonts="adobe-source-han-sans-jp-fonts adobe-source-han-sans-kr-fonts ttf-liberation ttf-font-awesome"
 extraa="android-tools"
 pacman -Sy
-pacman -S --needed $base $utility $applications $fonts $extra
+pacman -S --needed $base $utility $audio $applications $fonts $extra
 
 # Needed for startx
 cat << EOF > /home/kenneth/.xinitrc
