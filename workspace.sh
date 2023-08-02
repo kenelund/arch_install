@@ -3,7 +3,7 @@
 base="dmenu rxvt-unicode i3-wm i3blocks i3lock i3status dunst feh htop rofi unclutter xautolock"
 utility="acpi alsa-tools alsa-utils arandr bridge-utils inotify-tools inetutils libnotify lib32-alsa-plugins lib32-libpulse logrotate net-tools pavucontrol pulseaudio-alsa smartmontools tlp xdotool xfsprogs xprintidle xssstate git unrar unzip zip p7zip gzip"
 applications="cmus deluge-gtk firefox leafpad mpv mupdf neofetch obsidian ranger rclone redshift tmux viewnior"
-fonts="adobe-source-han-sans-jp-fonts adobe-source-han-sans-kr-fonts ttf-liberation"
+fonts="adobe-source-han-sans-jp-fonts adobe-source-han-sans-kr-fonts ttf-liberation ttf-font-awesome"
 extraa="android-tools"
 pacman -Sy
 pacman -S --needed $base $utility $applications $fonts $extra
