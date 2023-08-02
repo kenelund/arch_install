@@ -66,7 +66,7 @@ EOF
 #makepkg -si
 #rmdir yay
 
-# yay -S google-chrome i3blocks-contrib dropbox
+# yay -S google-chrome i3blocks-contrib dropbox nordic-theme zafiro-icon-theme
 
 
 
