@@ -15,7 +15,7 @@ then
 fi
 
 # Clear disk before partitioning
-wipefs -a /dev/sda
+sudo wipefs -a /dev/sda
 
 # to create the partitions programatically (rather than manually)
 # https://superuser.com/a/984637
