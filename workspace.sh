@@ -60,7 +60,7 @@ EOF
 
 # Bash profile for automatic start x
 cat << EOF > /home/kenneth/.bash_profile
-
+[[ -f ~/.bashrc ]] && . ~/.bashrc;
 
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   exec startx
