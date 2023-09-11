@@ -66,7 +66,7 @@ pacman-key --populate archlinux
 pacman-key --refresh-keys
 20211215-1
 # Installing core packages
-pacstrap /mnt base base-devel linux linux-firmware intel-ucode efibootmgr dosfstools exfat-utils freetype2 wget curl iw wpa_supplicant dialog xorg-server xorg-apps xorg-twm xorg-xclock xorg-xinit xorg-xprop xorg-xwininfo mesa xf86-video-intel xf86-input-synaptics vi vim bash-completion wireless_tools pacman-contrib
+pacstrap /mnt base base-devel linux linux-firmware intel-ucode efibootmgr dosfstools exfat-utils freetype2 wget curl man iw wpa_supplicant dialog xorg-server xorg-apps xorg-twm xorg-xclock xorg-xinit xorg-xprop xorg-xwininfo mesa xf86-video-intel xf86-input-synaptics vi vim bash-completion wireless_tools pacman-contrib
 
 # Generate fstab
 genfstab -U /mnt >> /mnt/etc/fstab
