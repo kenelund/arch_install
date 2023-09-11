@@ -11,6 +11,11 @@ pacman -S --needed $base $utility $audio $applications $fonts $extra
 
 # Needed for startx
 cat << EOF > /home/kenneth/.xinitrc
+userresources=$HOME/.Xresources
+if [ -f $userresources ]; then
+    xrdb -merge $userresources
+fi
+
 for i in /home/kenneth/bin/*.sh
 do
   . $i &
