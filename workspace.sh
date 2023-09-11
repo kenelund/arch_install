@@ -11,7 +11,7 @@ pacman -S --needed $base $utility $audio $applications $fonts $extra
 
 # Needed for startx
 cat << EOF > /home/kenneth/.xinitrc
-userresources=$HOME/.Xresources
+userresources=$HOME/bin/src/.Xresources
 if [ -f $userresources ]; then
     xrdb -merge $userresources
 fi
@@ -42,11 +42,6 @@ EOF
 # Load custom tmux file
 cat << EOF > /home/kenneth/.tmux.conf
 source /home/kenneth/bin/src/.tmux.conf
-EOF
-
-# Load custom resource file for urxvt-unicode
-cat << EOF > /home/kenneth/.Xresources
-source /home/kenneth/bin/src/.Xresources
 EOF
 
 # Add extra fonts folder
