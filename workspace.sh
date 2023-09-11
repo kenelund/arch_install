@@ -1,7 +1,7 @@
 #! /bin/bash
 
 base="dmenu rxvt-unicode i3-wm i3blocks i3lock i3status dunst rofi libnotify"
-utility="acpi arandr bridge-utils inotify-tools inetutils xautolock logrotate net-tools smartmontools tlp xdotool xfsprogs xprintidle xssstate git unrar unzip zip p7zip gzip"
+utility="acpi arandr bridge-utils inotify-tools inetutils xautolock logrotate net-tools smartmontools tlp xdotool lxappearance xfsprogs xprintidle xssstate git unrar unzip zip p7zip gzip"
 audio="pavucontrol pulseaudio-alsa lib32-alsa-plugins alsa-tools alsa-utils lib32-libpulse"
 applications="cmus htop unclutter feh deluge-gtk firefox leafpad mpv mupdf neofetch obsidian ranger rclone redshift tmux viewnior"
 fonts="adobe-source-han-sans-jp-fonts adobe-source-han-sans-kr-fonts ttf-liberation ttf-font-awesome"
