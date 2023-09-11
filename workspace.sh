@@ -58,7 +58,14 @@ cat << EOF > /home/kenneth/.config/ranger/rc.conf
 set show_hidden true
 EOF
 
+# Bash profile for automatic start x
+cat << EOF > /home/kenneth/.bash_profile
 
+
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+  exec startx
+fi
+EOF
 
 # arch user repoaitory
 #cd /root
