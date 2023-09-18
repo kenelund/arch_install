@@ -1,0 +1,3 @@
+cat << EOF > /etc/tmpfiles.d/disable-hybrid-sleep.conf
+w /sys/power/mem_sleep - - - - deep
+EOF
