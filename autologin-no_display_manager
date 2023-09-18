@@ -35,3 +35,13 @@ fi
 EOF
 
 chmod a+x /bin/autologin.sh
+
+# Bash profile for automatic start x
+cat << EOF > /home/kenneth/.bash_profile
+[[ -f ~/.bashrc ]] && . ~/.bashrc;
+
+if [ -f /tmp/autologin ]; then
+  rm /tmp/autologin
+  exec startx
+fi
+EOF
