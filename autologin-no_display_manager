@@ -1,4 +1,5 @@
-# Setup login management - no display manager
+# Setup login management - no display manager (to be done after system install and reboot out of chroot)
+
 mkdir /etc/systemd/system/getty@tty1.service.d
 
 cat << EOF > /etc/systemd/system/getty@tty1.service.d/autologin.conf
@@ -7,13 +8,28 @@ ExecStart=
 ExecStart=-/bin/autologin.sh %I
 EOF
 
+cat << EOF > /etc/systemd/system/onetimelogin.service
+[Unit]
+Description=Prepare one time login
+
+[Service]
+Type=oneshot
+ExecStart=-/bin/touch /tmp/autologin
+ExecStart=-/bin/chown kenneth:users /tmp/autologin
+
+[Install]
+WantedBy=basic.target
+EOF
+
+systemctl enable onetimelogin.service
+
 cat << EOF > /bin/autologin.sh
 #!/bin/sh
 if [ -f /tmp/autologin ]
 then
-  exec /sbin/agetty --autologin kenneth --noclear $1
+  exec /sbin/agetty --autologin kenneth --noclear $1 38400 linux
 else
-  exec /sbin/agetty --noclear $1
+  exec /sbin/agetty --noclear $1 38400 linux
 fi
 EOF
 
