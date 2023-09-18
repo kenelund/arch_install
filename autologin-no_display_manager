@@ -1,4 +1,5 @@
 # Setup login management - no display manager (to be done after system install and reboot out of chroot)
+# password protection in my case is handled by i3locks
 
 mkdir /etc/systemd/system/getty@tty1.service.d
 
