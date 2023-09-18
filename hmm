@@ -1,3 +1,7 @@
+# s2idle - will keep the machine on like a phone, with "minimal" power usage. For proper sleep use deep
+# To test before making config as root user do: echo deep > /sys/power/mem_sleep
+
+# For persistent config
 cat << EOF > /etc/tmpfiles.d/disable-hybrid-sleep.conf
 w /sys/power/mem_sleep - - - - deep
 EOF
