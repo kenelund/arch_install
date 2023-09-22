@@ -45,3 +45,14 @@ if [ -f /tmp/autologin ]; then
   exec startx
 fi
 EOF
+
+
+
+# arch user repoaitory
+cd /tmp
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+rmdir yay
+
+yay -S google-chrome i3blocks-contrib dropbox nordic-theme zafiro-icon-theme
