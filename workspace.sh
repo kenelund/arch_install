@@ -58,11 +58,3 @@ cat << EOF > /home/kenneth/.config/ranger/rc.conf
 set show_hidden true
 EOF
 
-# arch user repoaitory
-#cd /root
-#git clone https://aur.archlinux.org/yay.git
-#cd yay
-#makepkg -si
-#rmdir yay
-
-# yay -S google-chrome i3blocks-contrib dropbox nordic-theme zafiro-icon-theme
